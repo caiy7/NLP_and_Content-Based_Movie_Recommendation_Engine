@@ -1,3 +1,3 @@
 # Project_Fletcher
 This movie recommendation system is based on NLP analysis and genre info on ~1000 movies scripts from imsdb.com.   
-To run the system, download the model folder and run recommendation_app.py. Then open webpage on local host, which is likely http://127.0.0.1:5000
+To run the system, generate the TFIDF and NMF models and the combined matrix by running the nlp_process_and_modeling.ipynb notebook and save it to the model folder. After run recommendation.py in the same folder, to access the webpage,  open on local host, likely http://127.0.0.1:5000
