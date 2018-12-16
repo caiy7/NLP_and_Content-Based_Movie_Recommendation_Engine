@@ -85,9 +85,11 @@ def rec_title():
     send it with a response
     """
     data = flask.request.json
+    print(data)
     t = data["title"][0]
+    scale = data["scale"]
     movie_ind = movie_titles.index[movie_titles.str.lower()==t.lower()]
-    rec_ind = similar_movie_by_title(movie_ind, nmf_topic_vec_normalized, genre_vec)
+    rec_ind = similar_movie_by_title(movie_ind, nmf_topic_vec_normalized, genre_vec, scale)
     rec_movies = movie_titles[rec_ind]
     results = {"movies": list(rec_movies)}
     return flask.jsonify(results)
@@ -102,7 +104,8 @@ def rec_text():
     data = flask.request.json
     text=data["doc"][0]
     genre = data["genre_list"]
-    rec_ind = similar_movie_by_text(text, genre, nmf_topic_vec_normalized, genre_vec, tfidf, genre_tfidf, nmf)
+    scale = data["scale"][0]
+    rec_ind = similar_movie_by_text(text, genre, nmf_topic_vec_normalized, genre_vec, tfidf, genre_tfidf, nmf, scale)
     rec_movies = movie_titles[rec_ind]
     results = {"movies": list(rec_movies)}
     return flask.jsonify(results)
