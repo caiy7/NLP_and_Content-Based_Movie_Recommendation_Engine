@@ -10,9 +10,9 @@ An interactive app was created for the recommendation system:
 2. **Versino with movie poster:** Use `recommendation_app_with_poster.py` and `movie_rec_with_poster.html`. To use this version, you need to put a `poster` folder containing all the posters in the `static` folder. In the code, each movie is give an Id and the poster image is named with the movieId. 
 
 A demo of the app.  
-Using movie title as the input:  
+Using movie title as the input:    
 <img src='img/rec_by_title.gif' img>  
-Using movie plot as the input:  
+Using movie plot as the input:    
 <img src='img/rec_by_text.gif' img>  
 
 Please check my [blog post](https://caiy7.github.io/content-based-rec-system/) for more information.  
